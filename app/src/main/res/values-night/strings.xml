@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_success">Success</string>
+    <string name="image_selection_failed">Failed to upload image.</string>
+</resources>
