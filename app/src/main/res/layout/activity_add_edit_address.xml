@@ -135,6 +135,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:padding="@dimen/et_padding"
+                    android:maxLength="6"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="@dimen/et_textSize" />
             </com.google.android.material.textfield.TextInputLayout>

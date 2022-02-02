@@ -125,7 +125,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
             binding.etProductPrice.text.toString().trim{it <= ' '},
             binding.etProductDescription.text.toString().trim{it <= ' '},
             binding.etProductQuantity.text.toString().trim{it <= ' '},
-            mProductImageURL
+            mProductImageURL, "", binding.etProductShippingCharge.text.toString().trim{it <= ' '}
         )
 
         FirestoreClass().uploadProductDetails(this@AddProductActivity, productInfo = product)

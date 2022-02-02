@@ -78,6 +78,9 @@
     <string name="et_hint_product_description">Product Description</string>
     <string name="et_hint_product_quantity">Product Quantity</string>
 
+    <string name="et_hint_product_shipping_charge">Shipping Fee</string>
+
+
 
     <string name="err_msg_select_product_image">Please select product image.</string>
     <string name="err_msg_enter_product_title">Please enter product title.</string>
@@ -98,6 +101,8 @@
     <string name="title_product_details">PRODUCT DETAILS</string>
     <string name="lbl_product_description">Product Description</string>
     <string name="lbl_product_details_stock_quantity">Stock Quantity</string>
+    <string name="lbl_product_details_shipping_charge">Shipping Charge</string>
+
 
     <string name="btn_lbl_add_to_cart">ADD TO CART</string>
     <string name="success_message_item_added_to_cart">Added to Cart</string>

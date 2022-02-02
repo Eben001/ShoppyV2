@@ -81,6 +81,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
         binding.tvProductDetailsPrice.text = "₦${product.price}"
         binding.tvProductDetailsDescription.text = product.description
         binding.tvProductDetailsAvailableQuantity.text = product.stock_quantity
+        binding.tvProductDetailsShippingCharge.text = "₦${product.shipping_charge}"
 
         if (product.stock_quantity.toInt() == 0) {
             hideProgressDialog()
@@ -134,6 +135,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
             mProductDetails.price,
             mProductDetails.image,
             Constants.DEFAULT_CART_QUANTITY,
+            "", "", mProductDetails.shipping_charge
         )
 
         //show progress dialog

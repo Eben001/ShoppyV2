@@ -143,6 +143,65 @@
                     tools:text="5" />
             </LinearLayout>
 
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_product_details_shipping_charge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/product_details_label_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_product_details_quantity">
+
+                <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                    android:id="@+id/tv_product_details_shipping_charge_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/product_details_stock_quantity_paddingStartEnd"
+                    android:text="@string/lbl_shipping_charge"
+                    android:textColor="@color/item_value_text_color"
+                    android:textSize="@dimen/product_details_label_textSize" />
+
+                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                    android:id="@+id/tv_product_details_shipping_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_grey_border_background"
+                    android:paddingStart="@dimen/product_details_stock_quantity_paddingStartEnd"
+                    android:paddingTop="@dimen/product_details_stock_quantity_paddingTopBottom"
+                    android:paddingEnd="@dimen/product_details_stock_quantity_paddingStartEnd"
+                    android:paddingBottom="@dimen/product_details_stock_quantity_paddingTopBottom"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="@dimen/product_details_stock_quantity_textSize"
+                    android:textStyle="bold"
+                    tools:text="N100" />
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <com.ebenezer.gana.shoppy.utils.ShoppyButton
                 android:id="@+id/btn_add_to_cart"
                 android:layout_width="match_parent"
@@ -163,7 +222,7 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_product_details_quantity"
+                app:layout_constraintTop_toBottomOf="@id/ll_product_details_shipping_charge"
                 tools:visibility="visible" />
 
             <com.ebenezer.gana.shoppy.utils.ShoppyButton

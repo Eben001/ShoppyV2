@@ -16,12 +16,11 @@ import com.ebenezer.gana.shoppy.utils.Constants
 
 class CartListActivity : BaseActivity() {
 
-    private lateinit var mProductsList:ArrayList<Products>
-    private lateinit var mCartListItems:ArrayList<CartItem>
+    private lateinit var mProductsList: ArrayList<Products>
+    private lateinit var mCartListItems: ArrayList<CartItem>
 
 
-
-    lateinit var binding:ActivityCartListBinding
+    lateinit var binding: ActivityCartListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_cart_list)
@@ -47,25 +46,26 @@ class CartListActivity : BaseActivity() {
         getProductList()
     }
 
-    fun itemUpdateSuccess(){
+    fun itemUpdateSuccess() {
         hideProgressDialog()
         getCartItemsList()
     }
 
 
-    fun itemRemovedSuccess(){
+    fun itemRemovedSuccess() {
         hideProgressDialog()
-        Toast.makeText(this@CartListActivity,
-        resources.getString(R.string.msg_item_removed_successfully),
-        Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this@CartListActivity,
+            resources.getString(R.string.msg_item_removed_successfully),
+            Toast.LENGTH_SHORT
+        ).show()
 
         getCartItemsList()
 
     }
 
 
-
-    private fun getCartItemsList(){
+    private fun getCartItemsList() {
         //show progress dialog, hide when successCartItemList is called
         //showProgressDialog(resources.getString(R.string.please_wait))
         com.ebenezer.gana.shoppy.firestore.FirestoreClass().getCartList(this@CartListActivity)
@@ -74,14 +74,13 @@ class CartListActivity : BaseActivity() {
     }
 
 
-
-    private fun getProductList(){
+    private fun getProductList() {
         //show progress dialog, hide when successCartItemList is called
         showProgressDialog(resources.getString(R.string.please_wait))
-       FirestoreClass().getAllProductsList(this@CartListActivity)
+        FirestoreClass().getAllProductsList(this@CartListActivity)
     }
 
-    fun successProductsListFromFireStore(productsList:ArrayList<Products>){
+    fun successProductsListFromFireStore(productsList: ArrayList<Products>) {
         hideProgressDialog()
         mProductsList = productsList
         getCartItemsList()
@@ -89,18 +88,18 @@ class CartListActivity : BaseActivity() {
 
     }
 
-    fun successCartItemsList(cartList:ArrayList<CartItem>){
+    fun successCartItemsList(cartList: ArrayList<CartItem>) {
         //hide progress dialog, shown when getCartItemsList is called
 
         hideProgressDialog()
 
-        for (product in mProductsList){
-            for (cartItem in cartList){
-                if (product.product_id == cartItem.product_id){
+        for (product in mProductsList) {
+            for (cartItem in cartList) {
+                if (product.product_id == cartItem.product_id) {
 
                     cartItem.stock_quantity = product.stock_quantity
 
-                    if (product.stock_quantity.toInt() == 0){
+                    if (product.stock_quantity.toInt() == 0) {
                         cartItem.cart_quantity = product.stock_quantity
                     }
                 }
@@ -114,49 +113,52 @@ class CartListActivity : BaseActivity() {
             Log.i("Cart Item Title", items.title)
         }*/
 
-        if (mCartListItems.size > 0){
+        if (mCartListItems.size > 0) {
             binding.rvCartItemsList.visibility = View.VISIBLE
             binding.tvNoCartItemFound.visibility = View.GONE
             binding.llCheckout.visibility = View.VISIBLE
 
-            with(binding.rvCartItemsList){
+            with(binding.rvCartItemsList) {
                 layoutManager = LinearLayoutManager(this@CartListActivity)
                 setHasFixedSize(true)
-                val cartListAdapter = CartListAdapter(this@CartListActivity,
-                cartListItems = mCartListItems, true)
+                val cartListAdapter = CartListAdapter(
+                    this@CartListActivity,
+                    cartListItems = mCartListItems, true
+                )
                 adapter = cartListAdapter
             }
 
 
-            var subTotal:Double = 0.0
+            var subTotal: Double = 0.0
+            var shippingCharge = 0
 
-            for (item in mCartListItems){
+            for (item in mCartListItems) {
                 val availableQuantity = item.stock_quantity.toInt()
-                if (availableQuantity > 0){
-
+                if (availableQuantity > 0) {
                     val price = item.price.toDouble()
-                    val quantity  = item.cart_quantity.toInt()
+                    val quantity = item.cart_quantity.toInt()
+                    shippingCharge = item.product_shipping_charge.toInt()
                     subTotal += (price * quantity)
                 }
 
             }
 
             binding.tvSubTotal.text = "₦$subTotal"
-            binding.tvShippingCharge.text = "₦10.0"
+            binding.tvShippingCharge.text = "₦$shippingCharge"
 
-            if (subTotal > 0){
+            if (subTotal > 0) {
                 binding.llCheckout.visibility = View.VISIBLE
-                val total = subTotal + 10
+                val total = subTotal + shippingCharge
 
                 binding.tvTotalAmount.text = "₦$total"
-            }else {
+            } else {
 
                 binding.llCheckout.visibility = View.GONE
 
 
             }
 
-        }else{
+        } else {
             binding.rvCartItemsList.visibility = View.GONE
             binding.tvNoCartItemFound.visibility = View.VISIBLE
             binding.llCheckout.visibility = View.GONE

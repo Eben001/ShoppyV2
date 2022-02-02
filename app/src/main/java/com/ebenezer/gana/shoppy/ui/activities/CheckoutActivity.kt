@@ -95,7 +95,7 @@ class CheckoutActivity : BaseActivity() {
                 "My order ${System.currentTimeMillis()}",
                 mCartItemList[0].image,
                 mSubTotal.toString(),
-                "10.0", // fixed for now... will change later
+                mCartItemList[0].product_shipping_charge, // fixed for now... will change later
                 mTotalAmount.toString(),
                 System.currentTimeMillis()
 
@@ -137,22 +137,26 @@ class CheckoutActivity : BaseActivity() {
         binding.rvCartListItems.adapter = CartListAdapter(this, mCartItemList, false)
 
 
+        var shippingCharge = 0
+
         for (item in mCartItemList) {
             val availableQuantity = item.stock_quantity.toInt()
             if (availableQuantity > 0) {
                 val price = item.price.toDouble()
                 val quantity = item.cart_quantity.toInt()
+                shippingCharge = item.product_shipping_charge.toInt()
+
                 mSubTotal += (price * quantity)
             }
         }
 
         binding.tvCheckoutSubTotal.text = "₦$mSubTotal"
-        binding.tvCheckoutShippingCharge.text = "₦10"
+        binding.tvCheckoutShippingCharge.text = "₦$shippingCharge"
 
         if (mSubTotal > 0) {
             binding.llCheckoutPlaceOrder.visibility = View.VISIBLE
 
-            mTotalAmount = mSubTotal + 10.0
+            mTotalAmount = mSubTotal + shippingCharge
             binding.tvCheckoutTotalAmount.text = mTotalAmount.toString()
         } else {
             binding.llCheckoutPlaceOrder.visibility = View.GONE

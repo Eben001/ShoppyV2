@@ -113,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="12"
+                    android:maxLength="5"
                     android:padding="@dimen/et_padding"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="@dimen/et_textSize" />
@@ -164,6 +164,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:maxLength="2"
+                    android:padding="@dimen/et_padding"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/et_textSize" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_product_shipping_charge"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/et_hint_product_shipping_charge"
+                android:textColorHint="@color/colorSecondaryText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_product_quantity">
+
+                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                    android:id="@+id/et_product_shipping_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="3"
                     android:padding="@dimen/et_padding"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="@dimen/et_textSize" />
@@ -189,7 +216,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_product_quantity" />
+                app:layout_constraintTop_toBottomOf="@id/til_product_shipping_charge" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

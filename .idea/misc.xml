@@ -37,6 +37,11 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/SHOP_APP/shoppy/app/src/main/res/menu/add_product_menu.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/SHOP_APP/shoppy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/SHOP_APP/shoppy/app/src/main/res/menu/dashboard_menu.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_add_edit_address.xml" value="0.25" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_add_product.xml" value="0.33" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_address_list.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_product_details.xml" value="0.25" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/list_item_cart.xml" value="0.5" />
       </map>
     </option>
   </component>
