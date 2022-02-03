@@ -119,7 +119,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
             Context.MODE_PRIVATE).getString(Constants.LOGGED_IN_USERNAME, "")!!
 
         val product = Products(
-            FirestoreClass().getCurrentUserId(),
+            FirestoreClass().getCurrentUserId(), // this is the Id of the product owner
             user_name = username,
             binding.etProductTitle.text.toString().trim{it <= ' '},
             binding.etProductPrice.text.toString().trim{it <= ' '},

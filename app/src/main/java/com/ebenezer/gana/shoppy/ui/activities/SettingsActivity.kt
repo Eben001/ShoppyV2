@@ -97,7 +97,7 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
         binding.tvName.text = "${user.firstName} ${user.lastName}"
         binding.tvGender.text = user.gender
         binding.tvEmail.text = user.email
-        binding.tvMobileNumber.text = "${user.mobile}"
+        binding.tvMobileNumber.text = "0${user.mobile}"
     }
 
     override fun onResume() {

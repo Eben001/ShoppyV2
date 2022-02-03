@@ -53,11 +53,10 @@ class DashboardListAdapter(
             holder.itemView.setOnClickListener{
                 val intent = Intent(context, ProductDetailsActivity::class.java)
                 intent.putExtra(Constants.EXTRA_PRODUCT_ID, model.product_id)
-                intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, model.user_id)
 
+                intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, model.user_id) // the id of the user who uploaded the products
                 context.startActivity(intent)
             }
-
 
             /* holder.itemView.setOnClickListener{
                  onClickListener.let {
