@@ -81,9 +81,9 @@ class MyOrderDetailsActivity : AppCompatActivity() {
         }
 
         binding.tvMyOrderDetailsMobileNumber.text = orderDetails.address.mobileNumber
-        binding.tvOrderDetailsSubTotal.text = orderDetails.sub_total_amount
-        binding.tvOrderDetailsShippingCharge.text = orderDetails.shipping_charge
-        binding.tvOrderDetailsTotalAmount.text = orderDetails.total_amount
+        binding.tvOrderDetailsSubTotal.text = "₦${orderDetails.sub_total_amount}"
+        binding.tvOrderDetailsShippingCharge.text = "₦${orderDetails.shipping_charge}"
+        binding.tvOrderDetailsTotalAmount.text = "₦${orderDetails.total_amount}"
 
 
     }

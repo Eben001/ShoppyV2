@@ -78,9 +78,9 @@ class SoldProductsDetailsActivity : BaseActivity() {
         }
 
         binding.tvSoldDetailsMobileNumber.text = productDetails.address.mobileNumber
-        binding.tvSoldProductSubTotal.text = productDetails.sub_total_amount
-        binding.tvSoldProductShippingCharge.text = productDetails.shipping_charge
-        binding.tvSoldProductTotalAmount.text = productDetails.total_amount
+        binding.tvSoldProductSubTotal.text = "₦${productDetails.sub_total_amount}"
+        binding.tvSoldProductShippingCharge.text = "₦${productDetails.shipping_charge}"
+        binding.tvSoldProductTotalAmount.text = "₦${productDetails.total_amount}"
 
 
     }
