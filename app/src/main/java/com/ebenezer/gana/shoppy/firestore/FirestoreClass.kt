@@ -345,6 +345,23 @@ class FirestoreClass {
 
     }
 
+    fun deleteASoldProduct(fragment: SoldProductsFragment, userId: String) {
+        mFirestore.collection(Constants.SOLD_PRODUCTS)
+            .document(userId)
+            .delete()
+            .addOnSuccessListener {
+                fragment.successDeletingASoldProduct()
+            }
+            .addOnFailureListener {
+                fragment.hideProgressDialog()
+                Log.e(
+                    fragment.javaClass.simpleName,
+                    "Error while deleting all orders", it
+                )
+            }
+
+    }
+
     fun deleteAllOrders(fragment: OrdersFragment, userId: String) {
         mFirestore.collection(Constants.ORDERS)
             .document(userId)
@@ -359,7 +376,6 @@ class FirestoreClass {
                     "Error while deleting all orders", it
                 )
             }
-
 
     }
 

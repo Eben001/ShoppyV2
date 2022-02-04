@@ -63,9 +63,9 @@ class OrdersFragment : BaseFragment() {
 
     }
 
-    fun deleteAllOrders(orderId: String) {
+    fun deleteAllOrders(userId: String) {
 
-        showAlertDialogToDeleteAllOrders(orderId)
+        showAlertDialogToDeleteAllOrders(userId)
     }
 
     private fun showAlertDialogToDeleteAllOrders(userId: String) {
@@ -85,7 +85,7 @@ class OrdersFragment : BaseFragment() {
                 //show progress dialog to do the actual deletion from the cloud
                 showProgressDialog(resources.getString(R.string.please_wait))
 
-                com.ebenezer.gana.shoppy.firestore.FirestoreClass().deleteAllOrders(this, userId)
+                FirestoreClass().deleteAllOrders(this, userId)
                 dialog.dismiss()
             }
             .show()

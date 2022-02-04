@@ -68,7 +68,7 @@ class CartListActivity : BaseActivity() {
     private fun getCartItemsList() {
         //show progress dialog, hide when successCartItemList is called
         //showProgressDialog(resources.getString(R.string.please_wait))
-        com.ebenezer.gana.shoppy.firestore.FirestoreClass().getCartList(this@CartListActivity)
+        FirestoreClass().getCartList(this@CartListActivity)
 
 
     }

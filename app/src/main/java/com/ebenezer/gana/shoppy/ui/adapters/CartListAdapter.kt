@@ -107,13 +107,13 @@ class CartListAdapter(
 
                     }
                 }
-                com.ebenezer.gana.shoppy.firestore.FirestoreClass()
+                FirestoreClass()
                     .removedItemFromCart(context, model.id)
             }
 
             holder.itemView.findViewById<ImageButton>(R.id.ib_remove_cart_item).setOnClickListener {
                 if (model.cart_quantity == "1") {
-                    com.ebenezer.gana.shoppy.firestore.FirestoreClass()
+                    FirestoreClass()
                         .removedItemFromCart(context, model.id)
                 } else {
                     val cartQuantity: Int = model.cart_quantity.toInt()
@@ -129,7 +129,7 @@ class CartListAdapter(
 
                     }
 
-                    com.ebenezer.gana.shoppy.firestore.FirestoreClass()
+                    FirestoreClass()
                         .updateMyCart(context, model.id, itemHashMap)
                 }
             }
@@ -148,7 +148,7 @@ class CartListAdapter(
 
                     }
 
-                    com.ebenezer.gana.shoppy.firestore.FirestoreClass()
+                    FirestoreClass()
                         .updateMyCart(context, model.id, itemHashMap)
 
 

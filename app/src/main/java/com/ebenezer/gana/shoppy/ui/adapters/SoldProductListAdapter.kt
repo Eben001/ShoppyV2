@@ -12,13 +12,15 @@ import com.ebenezer.gana.shoppy.R
 import com.ebenezer.gana.shoppy.models.Order
 import com.ebenezer.gana.shoppy.models.SoldProduct
 import com.ebenezer.gana.shoppy.ui.activities.SoldProductsDetailsActivity
+import com.ebenezer.gana.shoppy.ui.fragments.SoldProductsFragment
 import com.ebenezer.gana.shoppy.utils.Constants
 
 import com.ebenezer.gana.shoppy.utils.GlideLoader
 
 class SoldProductListAdapter(
     private val context: Context,
-    private val soldProductList: ArrayList<SoldProduct>
+    private val soldProductList: ArrayList<SoldProduct>,
+    private val fragment:SoldProductsFragment
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -44,7 +46,13 @@ class SoldProductListAdapter(
             holder.itemView.findViewById<TextView>(R.id.tv_item_name).text = model.title
             holder.itemView.findViewById<TextView>(R.id.tv_item_price).text =
                 "₦${model.total_amount}"
-            holder.itemView.findViewById<ImageButton>(R.id.ib_delete_product).visibility = View.GONE
+            holder.itemView.findViewById<ImageButton>(R.id.ib_delete_product).visibility = View.VISIBLE
+
+
+
+            holder.itemView.findViewById<ImageButton>(R.id.ib_delete_product).setOnClickListener {
+                fragment.deleteASoldProduct(model.id)
+            }
 
             holder.itemView.setOnClickListener {
                 val intent = Intent(context, SoldProductsDetailsActivity::class.java)

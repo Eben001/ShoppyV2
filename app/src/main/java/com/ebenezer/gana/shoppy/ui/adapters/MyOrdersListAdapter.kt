@@ -12,7 +12,6 @@ import com.ebenezer.gana.shoppy.R
 import com.ebenezer.gana.shoppy.models.Order
 import com.ebenezer.gana.shoppy.ui.activities.MyOrderDetailsActivity
 import com.ebenezer.gana.shoppy.ui.fragments.OrdersFragment
-import com.ebenezer.gana.shoppy.ui.fragments.ProductsFragment
 import com.ebenezer.gana.shoppy.utils.Constants
 import com.ebenezer.gana.shoppy.utils.GlideLoader
 
