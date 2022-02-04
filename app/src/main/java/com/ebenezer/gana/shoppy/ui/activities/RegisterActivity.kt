@@ -1,5 +1,6 @@
 package com.ebenezer.gana.shoppy.ui.activities
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
@@ -163,6 +164,10 @@ class RegisterActivity : BaseActivity() {
                         )
                         FirestoreClass().registerUser(this@RegisterActivity, user)
 
+                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
+                        hideProgressDialog()
 
 
                     } else {
