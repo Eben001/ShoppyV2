@@ -112,28 +112,6 @@
                         tools:text="20 Oct 2020" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/order_details_lbl_order_status"
-                        android:textColor="@color/colorDarkGrey"
-                        android:textSize="@dimen/my_order_details_label_value_textSize" />
-
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
-                        android:id="@+id/tv_order_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/order_status_pending"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/my_order_details_label_value_textSize" />
-                </LinearLayout>
             </LinearLayout>
 
             <com.ebenezer.gana.shoppy.utils.ShoppyTextView
@@ -323,6 +301,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_payment_method"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/my_order_details_content_marginTopBottom"
@@ -342,7 +321,7 @@
                     android:textColor="@color/item_value_text_color"
                     android:textSize="@dimen/lbl_order_details_textSize" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/my_order_details_content_marginStartEnd"
@@ -351,7 +330,7 @@
                     android:textSize="@dimen/lbl_order_details_textSize" />
             </LinearLayout>
 
+
         </LinearLayout>
     </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout><!--END-->
+</androidx.constraintlayout.widget.ConstraintLayout>

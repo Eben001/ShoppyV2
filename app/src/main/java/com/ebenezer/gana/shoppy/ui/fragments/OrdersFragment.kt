@@ -108,7 +108,7 @@ class OrdersFragment : BaseFragment() {
 
                     showProgressDialog(resources.getString(R.string.please_wait))
 
-                    com.ebenezer.gana.shoppy.firestore.FirestoreClass().deleteAllOrders(
+                    FirestoreClass().deleteAllOrders(
                         this@OrdersFragment,
                         ordersList[viewHolder.adapterPosition].id
                     )
@@ -130,7 +130,7 @@ class OrdersFragment : BaseFragment() {
     private fun getMyOrdersList() {
         //show the progress dialog
         showProgressDialog(resources.getString(R.string.please_wait))
-        com.ebenezer.gana.shoppy.firestore.FirestoreClass().getMyOrdersList(this@OrdersFragment)
+        FirestoreClass().getMyOrdersList(this@OrdersFragment)
     }
 
    /* override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

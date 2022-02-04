@@ -139,6 +139,7 @@ class FirestoreClass {
             }
     }
 
+
     /**
      * A function to update the user profile data into the database.
      *
@@ -244,8 +245,6 @@ class FirestoreClass {
         // Prepare the sold product details
 
         for (cartItem in cartList) {
-
-
             val soldProducts = SoldProduct(
                 cartItem.product_owner_id,
                 cartItem.title,
@@ -257,11 +256,13 @@ class FirestoreClass {
                 order.sub_total_amount,
                 order.shipping_charge,
                 order.total_amount,
-                order.address
+                order.address,
+
             )
 
-            val documentReference = mFirestore.collection(Constants.SOLD_PRODUCTS)
-                .document(cartItem.product_id)
+            val documentReference =
+                mFirestore.collection(Constants.SOLD_PRODUCTS)
+                    .document(cartItem.product_id)
 
             writeBatch.set(documentReference, soldProducts)
         }
@@ -344,7 +345,7 @@ class FirestoreClass {
 
     }
 
-    fun deleteAllOrders(fragment: OrdersFragment, userId:String) {
+    fun deleteAllOrders(fragment: OrdersFragment, userId: String) {
         mFirestore.collection(Constants.ORDERS)
             .document(userId)
             .delete()

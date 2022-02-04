@@ -120,8 +120,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/sold_details_content_marginStartEnd"
                 android:layout_marginTop="@dimen/sold_details_content_marginTopBottom"
-                android:layout_marginBottom="@dimen/sold_details_content_marginTopBottom"
                 android:layout_marginEnd="@dimen/sold_details_content_marginStartEnd"
+                android:layout_marginBottom="@dimen/sold_details_content_marginTopBottom"
                 android:paddingTop="@dimen/sold_details_content_lbl_padding"
                 android:paddingBottom="@dimen/sold_details_content_lbl_padding"
                 android:text="@string/checkout_lbl_product_items"
@@ -132,8 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingStart="@dimen/sold_details_content_paddingStartEnd"
                 android:paddingTop="@dimen/sold_details_content_paddingTopBottom"
                 android:paddingEnd="@dimen/sold_details_content_paddingStartEnd"
@@ -293,6 +293,7 @@
                 android:textSize="@dimen/sold_details_lbl_textSize" />
 
             <LinearLayout
+                android:id="@+id/ll_payment_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -368,6 +369,7 @@
                         tools:text="$110" />
                 </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

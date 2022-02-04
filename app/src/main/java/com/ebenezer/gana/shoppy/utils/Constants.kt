@@ -40,6 +40,9 @@ object Constants {
     const val COMPLETE_PROFILE: String = "profileCompleted"
     const val PRODUCT_IMAGE: String = "Product_Image"
 
+    const val PAYMENT_STATUS: String = "orders_payment_status"
+
+
     const val EXTRA_PRODUCT_ID: String = "extra_product_id"
     const val EXTRA_PRODUCT_OWNER_ID: String = "extra_product_owner_id"
 
@@ -66,11 +69,11 @@ object Constants {
 
     const val STOCK_QUANTITY = "stock_quantity"
 
-    const val EXTRA_MY_ODER_DETAILS: String = "extra_my_order_details"
+    const val EXTRA_MY_ORDER_DETAILS: String = "extra_my_order_details"
 
     const val EXTRA_SOLD_PRODUCTS_DETAILS: String = "extra_sold_products_details"
 
-
+    const val EXTRA_SOLD_ORDER_PRODUCTS_DETAILS: String = "extra_sold_order_products_details"
 
 
 

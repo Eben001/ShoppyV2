@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ebenezer.gana.shoppy.R
 import com.ebenezer.gana.shoppy.databinding.FragmentSoldProductsBinding
 import com.ebenezer.gana.shoppy.firestore.FirestoreClass
+import com.ebenezer.gana.shoppy.models.Order
 import com.ebenezer.gana.shoppy.models.SoldProduct
 import com.ebenezer.gana.shoppy.ui.adapters.SoldProductListAdapter
 
@@ -37,9 +38,9 @@ class SoldProductsFragment : BaseFragment() {
         getSoldProductsList()
     }
 
-    fun successSoldProductsList(soldProductsList:ArrayList<SoldProduct>){
+    fun successSoldProductsList(soldProductsList: ArrayList<SoldProduct>) {
         hideProgressDialog()
-        if (soldProductsList.size > 0){
+        if (soldProductsList.size > 0) {
             binding!!.rvSoldProductItems.visibility = View.VISIBLE
             binding!!.tvNoSoldProductsFound.visibility = View.GONE
 
@@ -51,7 +52,7 @@ class SoldProductsFragment : BaseFragment() {
                 adapter = SoldProductListAdapter(requireActivity(), soldProductsList)
 
             }
-        }else{
+        } else {
             binding!!.rvSoldProductItems.visibility = View.GONE
             binding!!.tvNoSoldProductsFound.visibility = View.VISIBLE
 
@@ -61,13 +62,13 @@ class SoldProductsFragment : BaseFragment() {
     }
 
 
-    private fun getSoldProductsList(){
+
+    private fun getSoldProductsList() {
         // show the progress dialog
         showProgressDialog(resources.getString(R.string.please_wait))
 
         // call the function of FireStore class
-        com.ebenezer.gana.shoppy.firestore.FirestoreClass().getSoldProductsList(this@SoldProductsFragment)
-
+        FirestoreClass().getSoldProductsList(this@SoldProductsFragment)
     }
 
     override fun onDestroyView() {

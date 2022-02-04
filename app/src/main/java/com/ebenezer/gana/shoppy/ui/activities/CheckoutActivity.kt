@@ -95,10 +95,9 @@ class CheckoutActivity : BaseActivity() {
                 "My order ${System.currentTimeMillis()}",
                 mCartItemList[0].image,
                 mSubTotal.toString(),
-                mCartItemList[0].product_shipping_charge, // fixed for now... will change later
+                mCartItemList[0].product_shipping_charge,
                 mTotalAmount.toString(),
-                System.currentTimeMillis()
-
+                System.currentTimeMillis(),
             )
 
             // create an orders collection from FireStore

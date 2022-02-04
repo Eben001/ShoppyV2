@@ -2,13 +2,13 @@ package com.ebenezer.gana.shoppy.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ebenezer.gana.shoppy.R
 import com.ebenezer.gana.shoppy.databinding.ActivityMyOrderDetailsBinding
+import com.ebenezer.gana.shoppy.firestore.FirestoreClass
 import com.ebenezer.gana.shoppy.models.Order
 import com.ebenezer.gana.shoppy.ui.adapters.CartListAdapter
 import com.ebenezer.gana.shoppy.utils.Constants
@@ -29,8 +29,8 @@ class MyOrderDetailsActivity : AppCompatActivity() {
 
         var myOrderDetails: Order = Order()
 
-        if (intent.hasExtra(Constants.EXTRA_MY_ODER_DETAILS)) {
-            myOrderDetails = intent.getParcelableExtra<Order>(Constants.EXTRA_MY_ODER_DETAILS)!!
+        if (intent.hasExtra(Constants.EXTRA_MY_ORDER_DETAILS)) {
+            myOrderDetails = intent.getParcelableExtra<Order>(Constants.EXTRA_MY_ORDER_DETAILS)!!
         }
 
 
@@ -50,54 +50,16 @@ class MyOrderDetailsActivity : AppCompatActivity() {
         val orderDateTime = formatter.format(calendar.time)
         binding.tvOrderDetailsDate.text = orderDateTime
 
-        val diffInMilliSeconds: Long = System.currentTimeMillis() - orderDetails.order_datetime
-
-        val diffInHours: Long = TimeUnit.MILLISECONDS.toHours(diffInMilliSeconds)
-        Log.e("Difference in Hours", "$diffInHours")
-
-
-        when {
-            diffInHours < 1 -> {
-                binding.tvOrderStatus.text = resources.getString(R.string.order_status_pending)
-                binding.tvOrderStatus.setTextColor(
-                    ContextCompat.getColor(
-                        this@MyOrderDetailsActivity,
-                        R.color.colorAccent
-                    )
-                )
-            }
-
-            diffInHours < 2 -> {
-                binding.tvOrderStatus.text = resources.getString(R.string.order_status_in_process)
-                binding.tvOrderStatus.setTextColor(
-                    ContextCompat.getColor(
-                        this@MyOrderDetailsActivity,
-                        R.color.colorOrderStatusInProcess
-                    )
-                )
-            }
-            else -> {
-
-                binding.tvOrderStatus.text = resources.getString(R.string.order_status_delivered)
-                binding.tvOrderStatus.setTextColor(
-                    ContextCompat.getColor(
-                        this@MyOrderDetailsActivity,
-                        R.color.colorOrderStatusDelivered
-                    )
-                )
-
-            }
-
-        }
-
 
         binding.rvMyOrderItemsList.apply {
             layoutManager = LinearLayoutManager(this@MyOrderDetailsActivity)
             setHasFixedSize(true)
 
             //reuse the cartAdapter
-            adapter = CartListAdapter(this@MyOrderDetailsActivity,
-            orderDetails.items, false )
+            adapter = CartListAdapter(
+                this@MyOrderDetailsActivity,
+                orderDetails.items, false
+            )
 
         }
         binding.tvMyOrderDetailsAddressType.text = orderDetails.address.type
@@ -109,11 +71,11 @@ class MyOrderDetailsActivity : AppCompatActivity() {
             .additionalNote
 
 
-        if (orderDetails.address.otherDetails.isNotEmpty()){
+        if (orderDetails.address.otherDetails.isNotEmpty()) {
             binding.tvMyOrderDetailsOtherDetails.visibility = View.VISIBLE
             binding.tvMyOrderDetailsOtherDetails.text = orderDetails.address.otherDetails
 
-        }else{
+        } else {
             binding.tvMyOrderDetailsOtherDetails.visibility = View.GONE
 
         }

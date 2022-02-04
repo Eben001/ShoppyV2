@@ -56,7 +56,7 @@ class MyOrdersListAdapter(
 
             holder.itemView.setOnClickListener {
                 val intent = Intent(context, MyOrderDetailsActivity::class.java)
-                intent.putExtra(Constants.EXTRA_MY_ODER_DETAILS, model)
+                intent.putExtra(Constants.EXTRA_MY_ORDER_DETAILS, model)
                 context.startActivity(intent)
             }
 

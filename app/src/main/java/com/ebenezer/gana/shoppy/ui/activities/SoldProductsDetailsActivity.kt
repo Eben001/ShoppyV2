@@ -1,19 +1,24 @@
 package com.ebenezer.gana.shoppy.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.ebenezer.gana.shoppy.R
 import com.ebenezer.gana.shoppy.databinding.ActivitySoldProductsDetailsBinding
+import com.ebenezer.gana.shoppy.firestore.FirestoreClass
 import com.ebenezer.gana.shoppy.models.SoldProduct
 import com.ebenezer.gana.shoppy.utils.Constants
+import com.ebenezer.gana.shoppy.utils.Constants.PAYMENT_STATUS
 import com.ebenezer.gana.shoppy.utils.GlideLoader
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.text.SimpleDateFormat
 import java.util.*
 
-class SoldProductsDetailsActivity : AppCompatActivity() {
+class SoldProductsDetailsActivity : BaseActivity() {
     private lateinit var binding: ActivitySoldProductsDetailsBinding
 
+    //private var mSoldProductOwner: String = ""
+    private var mProductDetails:SoldProduct = SoldProduct()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_sold_products_details)
@@ -22,22 +27,20 @@ class SoldProductsDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupActionBar()
 
-
-        var productDetails: SoldProduct = SoldProduct()
+//
+//        var productDetails: SoldProduct = SoldProduct()
 
         if (intent.hasExtra(Constants.EXTRA_SOLD_PRODUCTS_DETAILS)) {
-            productDetails =
+            mProductDetails =
                 intent.getParcelableExtra<SoldProduct>(Constants.EXTRA_SOLD_PRODUCTS_DETAILS)!!
 
         }
-
-        setupUI(productDetails)
-
-
+        setupUI(mProductDetails)
 
     }
 
-    private fun setupUI(productDetails:SoldProduct){
+
+    private fun setupUI(productDetails: SoldProduct) {
         binding.tvSoldProductDetailsId.text = productDetails.order_id
 
         val dateFormat = "dd MMM yyyy HH:mm"
@@ -45,7 +48,7 @@ class SoldProductsDetailsActivity : AppCompatActivity() {
         val formatter = SimpleDateFormat(dateFormat, Locale.getDefault())
 
 
-        val calender:Calendar = Calendar.getInstance()
+        val calender: Calendar = Calendar.getInstance()
         calender.timeInMillis = productDetails.order_date
         binding.tvSoldProductDetailsDate.text = formatter.format(calender.time)
 
@@ -66,10 +69,10 @@ class SoldProductsDetailsActivity : AppCompatActivity() {
         binding.tvSoldDetailsAdditionalNote.text = productDetails.address.additionalNote
 
 
-        if (productDetails.address.otherDetails.isNotEmpty()){
+        if (productDetails.address.otherDetails.isNotEmpty()) {
             binding.tvSoldDetailsOtherDetails.visibility = View.VISIBLE
             binding.tvSoldDetailsOtherDetails.text = productDetails.address.otherDetails
-        }else{
+        } else {
             binding.tvSoldDetailsOtherDetails.visibility = View.GONE
 
         }
@@ -78,10 +81,6 @@ class SoldProductsDetailsActivity : AppCompatActivity() {
         binding.tvSoldProductSubTotal.text = productDetails.sub_total_amount
         binding.tvSoldProductShippingCharge.text = productDetails.shipping_charge
         binding.tvSoldProductTotalAmount.text = productDetails.total_amount
-
-
-
-
 
 
     }
@@ -97,6 +96,8 @@ class SoldProductsDetailsActivity : AppCompatActivity() {
         binding.toolbarSoldProductDetailsActivity.setNavigationOnClickListener { onBackPressed() }
 
     }
+
+
 
 
 }
