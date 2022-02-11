@@ -66,7 +66,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_product_detail_image">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                     android:id="@+id/tv_product_details_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                     android:textSize="@dimen/product_details_title_textSize"
                     tools:text="Product Title" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_product_details_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                     tools:text="$100" />
             </LinearLayout>
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                 android:id="@+id/tv_product_details_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ll_product_details_title_price" />
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                 android:id="@+id/tv_product_details_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_product_details_description">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                     android:id="@+id/tv_product_details_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                     android:textColor="@color/item_value_text_color"
                     android:textSize="@dimen/product_details_label_textSize" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_product_details_available_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ll_product_details_quantity">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                     android:id="@+id/tv_product_details_shipping_charge_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                     android:textColor="@color/item_value_text_color"
                     android:textSize="@dimen/product_details_label_textSize" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_product_details_shipping_charge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
 
 
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyButton
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyButton
                 android:id="@+id/btn_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -225,7 +225,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ll_product_details_shipping_charge"
                 tools:visibility="visible" />
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyButton
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyButton
                 android:id="@+id/btn_go_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

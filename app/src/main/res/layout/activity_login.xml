@@ -21,7 +21,7 @@
             android:contentDescription="@string/content_description"
             android:src="@drawable/iv_auth_login" />
 
-        <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+        <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fl_header_image">
 
-        <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+        <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/colorPrimary">
 
-        <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+        <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             tools:text="123456" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
         android:id="@+id/tv_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_password" />
 
-    <com.ebenezer.gana.shoppy.utils.ShoppyButton
+    <com.ebenezer.gana.shoppyv2.utils.ShoppyButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login">
 
-        <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+        <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
             android:id="@+id/tv_don_t_have_an_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
             android:textColor="@color/colorSecondaryText"
             android:textSize="@dimen/lbl_text_view_textSize" />
 
-        <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+        <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
             android:id="@+id/tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

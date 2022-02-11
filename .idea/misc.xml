@@ -37,17 +37,34 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/SHOP_APP/shoppy/app/src/main/res/menu/add_product_menu.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/SHOP_APP/shoppy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/SHOP_APP/shoppy/app/src/main/res/menu/dashboard_menu.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/ShoppyVersion2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/ShoppyVersion2/app/src/main/res/layout/list_item_product.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/ShoppyVersion2/app/src/main/res/menu/add_product_menu.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/ShoppyVersion2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/ShoppyVersion2/app/src/main/res/menu/dashboard_menu.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/drawable/app_gradient_color_background.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/drawable/ic_vector_add_product.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/drawable/item_dashboard_background.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/drawable/item_grey_border_background.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/drawable/progress_drawable.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_add_edit_address.xml" value="0.25" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_add_product.xml" value="0.21" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_address_list.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_dashboard.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_my_order_details.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_product_details.xml" value="0.25" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_settings.xml" value="0.22" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_sold_products_details.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_splash.xml" value="0.18796296296296297" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/activity_user_profile.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/dialog_progress.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/fragment_orders.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/layout/list_item_cart.xml" value="0.5" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/menu/add_product_menu.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/HP/Downloads/shoppy_new/app/src/main/res/menu/dashboard_menu.xml" value="0.20052083333333334" />
       </map>
     </option>
   </component>

@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.SplashActivity">
 
-    <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:textSize="@dimen/splash_title_text_size">
 
 
-    </com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold>
+    </com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold>
 
 
 </RelativeLayout>

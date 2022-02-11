@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ebenezer.gana.shoppy">
+    package="com.ebenezer.gana.shoppyv2">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -12,81 +12,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shoppy">
         <activity
-            android:name=".ui.activities.DashboardActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.DashboardActivity"
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name=".ui.activities.SoldProductsDetailsActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.MyOrderDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.MyOrderDetailsActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.CheckoutActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.CheckoutActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.AddEditAddressActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.AddEditAddressActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.AddressListActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.AddressListActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.CartListActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.CartListActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.ProductDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shoppy.NoActionBar" />
+
+        <activity
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.ProductDetailsActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.UserProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.AddProductActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Shoppy.NoActionBar" />
-        <activity
-            android:name=".ui.activities.SettingsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Shoppy.NoActionBar" />
-        <activity
-            android:name=".ui.activities.UserProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Shoppy.NoActionBar" />
-        <activity
-            android:name=".ui.activities.ForgotPasswordActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.ForgotPasswordActivity"
             android:exported="false"
             android:label="Reset Password"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.BaseActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.RegisterActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar" />
         <activity
-            android:name=".ui.activities.SplashActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Shoppy.NoActionBar">
@@ -97,7 +89,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name="com.ebenezer.gana.shoppyv2.ui.activities.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

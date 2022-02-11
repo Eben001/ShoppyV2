@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                 android:id="@+id/tv_product_items"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_product_items" />
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                 android:id="@+id/tv_selected_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                 android:paddingEnd="@dimen/checkout_content_paddingStartEnd"
                 android:paddingBottom="@dimen/checkout_content_paddingTopBottom">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_checkout_address_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                     android:textStyle="bold"
                     tools:text="Home" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                     android:id="@+id/tv_checkout_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                     android:textSize="@dimen/item_address_name_textSize"
                     tools:text="Ebenezer Gana" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_checkout_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
                     android:textSize="@dimen/address_details_textSize"
                     tools:text="IBBUL" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_checkout_additional_note"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                     android:textSize="@dimen/address_details_textSize"
                     tools:text="Additional note" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_checkout_other_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                     android:textSize="@dimen/address_details_textSize"
                     tools:text="XYZ" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                     android:id="@+id/tv_mobile_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
                     tools:text="2343456789" />
             </LinearLayout>
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                 android:id="@+id/tv_items_receipt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -178,7 +178,7 @@
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="@dimen/checkout_label_value_textSize" />
 
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                         android:id="@+id/tv_checkout_sub_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -201,7 +201,7 @@
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="@dimen/checkout_label_value_textSize" />
 
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+                    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                         android:id="@+id/tv_checkout_shipping_charge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -224,7 +224,7 @@
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="@dimen/checkout_label_value_textSize" />
 
-                    <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+                    <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                         android:id="@+id/tv_checkout_total_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -255,7 +255,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextView
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -263,7 +263,7 @@
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyTextViewBold
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyTextViewBold
                 android:id="@+id/tv_payment_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -273,7 +273,7 @@
                 android:textSize="@dimen/checkout_label_value_textSize" />
         </LinearLayout>
 
-        <com.ebenezer.gana.shoppy.utils.ShoppyButton
+        <com.ebenezer.gana.shoppyv2.utils.ShoppyButton
             android:id="@+id/btn_place_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -55,7 +55,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
                     android:id="@+id/et_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_full_name">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
                     android:id="@+id/et_phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_phone_number">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
                     android:id="@+id/et_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_address">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
                     android:id="@+id/et_zip_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_zip_code">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
                     android:id="@+id/et_additional_note"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -176,7 +176,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_additional_note">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyRadioButton
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyRadioButton
                     android:id="@+id/rb_home"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/add_edit_address_radio_button_height"
@@ -189,7 +189,7 @@
                     android:textColor="@drawable/drawable_gender_tab_text_color_selector"
                     android:textStyle="bold" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyRadioButton
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyRadioButton
                     android:id="@+id/rb_office"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/add_edit_address_radio_button_height"
@@ -203,7 +203,7 @@
                     android:textColor="@drawable/drawable_gender_tab_text_color_selector"
                     android:textStyle="bold" />
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyRadioButton
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyRadioButton
                     android:id="@+id/rb_other"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/add_edit_address_radio_button_height"
@@ -233,7 +233,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rg_type">
 
-                <com.ebenezer.gana.shoppy.utils.ShoppyEditText
+                <com.ebenezer.gana.shoppyv2.utils.ShoppyEditText
                     android:id="@+id/et_other_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -243,7 +243,7 @@
                     android:textSize="@dimen/et_textSize" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.ebenezer.gana.shoppy.utils.ShoppyButton
+            <com.ebenezer.gana.shoppyv2.utils.ShoppyButton
                 android:id="@+id/btn_submit_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
