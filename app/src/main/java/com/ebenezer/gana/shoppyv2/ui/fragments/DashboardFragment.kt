@@ -83,21 +83,18 @@ class DashboardFragment : BaseFragment() {
                 binding!!.rvDashboardItems.visibility = View.VISIBLE
                 binding!!.tvNoDashboardItemsFound.visibility = View.GONE
 
-                binding!!.rvDashboardItems.layoutManager = GridLayoutManager(activity, 2)
+                // spanCount is set to 2 after every 5th item
+                val layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
+                layoutManager.spanSizeLookup = object:GridLayoutManager.SpanSizeLookup(){
+                    override fun getSpanSize(position: Int): Int {
+                        return if((position + 1) % 5 == 0) 2 else 1
+                    }
+                }
+                binding!!.rvDashboardItems.layoutManager = layoutManager
+
                 binding!!.rvDashboardItems.setHasFixedSize(true)
                 val allProductsAdapter = DashboardListAdapter(requireActivity(), dashboardItemList)
                 binding!!.rvDashboardItems.adapter = allProductsAdapter
-
-                /* allProductsAdapter.setOnclickListener(
-                     object:DashboardListAdapter.OnClickListener{
-                         override fun onClick(position: Int, product: Products) {
-                             val intent = Intent(context, ProductDetailsActivity::class.java)
-                             intent.putExtra(Constants.EXTRA_PRODUCT_ID, product.product_id)
-                             context.startActivity(intent)
-                         }
-                     }
-                 )*/
-
 
             } else {
                 binding!!.rvDashboardItems.visibility = View.GONE
