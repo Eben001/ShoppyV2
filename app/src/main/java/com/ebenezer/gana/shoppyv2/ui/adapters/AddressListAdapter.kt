@@ -18,15 +18,37 @@ import com.ebenezer.gana.shoppyv2.utils.Constants
 class AddressListAdapter(
     private val context: Context,
     private var addressList: ArrayList<Address>,
-    private val selectAddress:Boolean
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val selectAddress: Boolean
+) : RecyclerView.Adapter<AddressListAdapter.ViewHolder>() {
 
 
-    class AddressViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private lateinit var address: Address
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        fun bind(address: Address) {
+            this.address = address
+            itemView.findViewById<TextView>(R.id.tv_address_full_name).text = address.name
+            itemView.findViewById<TextView>(R.id.tv_address_type).text = address.type
+            itemView.findViewById<TextView>(R.id.tv_address_details).text =
+                "${address.address}, ${address.zipCode}"
+            itemView.findViewById<TextView>(R.id.tv_address_mobile_number).text =
+                address.mobileNumber
 
-        return AddressViewHolder(
+            if (selectAddress) {
+                itemView.setOnClickListener {
+                    val intent = Intent(context, CheckoutActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_SELECTED_ADDRESS, address)
+
+                    context.startActivity(intent)
+
+                }
+            }
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
+        return ViewHolder(
             LayoutInflater.from(context).inflate(
                 R.layout.list_item_address,
                 parent, false
@@ -34,7 +56,7 @@ class AddressListAdapter(
         )
     }
 
-    fun notifyEditItem(activity: Activity, position:Int){
+    fun notifyEditItem(activity: Activity, position: Int) {
         val intent = Intent(context, AddEditAddressActivity::class.java)
         intent.putExtra(Constants.EXTRA_ADDRESS_DETAILS, addressList[position])
         activity.startActivityForResult(intent, Constants.ADD_ADDRESS_REQUEST_CODE)
@@ -43,31 +65,9 @@ class AddressListAdapter(
 
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val model = addressList[position]
-
-        if (holder is AddressViewHolder){
-            holder.itemView.findViewById<TextView>(R.id.tv_address_full_name).text = model.name
-            holder.itemView.findViewById<TextView>(R.id.tv_address_type).text = model.type
-            holder.itemView.findViewById<TextView>(R.id.tv_address_details).text = "${model.address}, ${model.zipCode}"
-            holder.itemView.findViewById<TextView>(R.id.tv_address_mobile_number).text = model.mobileNumber
-
-            if (selectAddress){
-                holder.itemView.setOnClickListener {
-                   /* Toast.makeText(context,
-                    "Selected address: ${model.address}, ${model.zipCode}",
-                    Toast.LENGTH_SHORT).show()*/
-                    val intent = Intent(context, CheckoutActivity::class.java)
-                    intent.putExtra(Constants.EXTRA_SELECTED_ADDRESS, model)
-
-                    context.startActivity(intent)
-
-                }
-            }
-        }
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(addressList[position])
     }
-    override fun getItemCount(): Int {
-        return addressList.size
-    }
+
+    override fun getItemCount() = addressList.size
 }
