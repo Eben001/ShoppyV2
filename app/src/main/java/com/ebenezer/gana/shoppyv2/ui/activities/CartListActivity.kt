@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ebenezer.gana.shoppyv2.R
 import com.ebenezer.gana.shoppyv2.databinding.ActivityCartListBinding
 import com.ebenezer.gana.shoppyv2.firestore.FirestoreClass
 import com.ebenezer.gana.shoppyv2.models.CartItem
 import com.ebenezer.gana.shoppyv2.models.Products
+import com.ebenezer.gana.shoppyv2.ui.adapters.CartListAdapter
 import com.ebenezer.gana.shoppyv2.utils.Constants
 
 class CartListActivity : BaseActivity() {

@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "232039471194",
-    "project_id": "shoppy-7f4da",
-    "storage_bucket": "shoppy-7f4da.appspot.com"
+    "project_number": "777836760228",
+    "project_id": "shoppyv2",
+    "storage_bucket": "shoppyv2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:232039471194:android:b160bb3f0b4a46c0226063",
+        "mobilesdk_app_id": "1:777836760228:android:789121c901c585a9c8aa31",
         "android_client_info": {
-          "package_name": "com.ebenezer.gana.shoppy"
+          "package_name": "com.ebenezer.gana.shoppyv2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "232039471194-i194qkr94j28v5s1lin11vf5u9l0fo8b.apps.googleusercontent.com",
+          "client_id": "777836760228-n3vk1b36jastpdne0t4hhiugmu6r4qsq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ebenezer.gana.shoppy",
+            "package_name": "com.ebenezer.gana.shoppyv2",
             "certificate_hash": "9b2b664fc76439a6e86b50337aaa3208404b0072"
           }
         },
         {
-          "client_id": "232039471194-ie35bekgbjh1dt0oe4sfmesq12bmca4r.apps.googleusercontent.com",
+          "client_id": "777836760228-ukd3v08t71l7nrf03rardittarl4g963.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQcUMAR2UJ6Je9s6sfp41xIAUL1xqEBo8"
+          "current_key": "AIzaSyCGE0QUQaDnP4CLSeHQ3G_wSV8a8orzpiI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "232039471194-ie35bekgbjh1dt0oe4sfmesq12bmca4r.apps.googleusercontent.com",
+              "client_id": "777836760228-ukd3v08t71l7nrf03rardittarl4g963.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

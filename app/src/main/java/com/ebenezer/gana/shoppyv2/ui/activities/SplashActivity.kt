@@ -6,9 +6,16 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.ebenezer.gana.shoppyv2.R
+import com.google.firebase.auth.FirebaseAuth
+
+import com.google.firebase.auth.FirebaseUser
+
+
+
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -35,6 +42,7 @@ class SplashActivity : AppCompatActivity() {
             },
             2500
         )
+
 
     }
 
