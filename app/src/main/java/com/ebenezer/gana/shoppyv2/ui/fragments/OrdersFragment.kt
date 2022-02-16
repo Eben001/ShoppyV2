@@ -97,7 +97,7 @@ class OrdersFragment : BaseFragment() {
             binding.rvMyOrderItems.layoutManager = LinearLayoutManager(activity)
             binding.rvMyOrderItems.setHasFixedSize(true)
             binding.rvMyOrderItems.adapter =
-                MyOrdersListAdapter(requireActivity(), ordersList, this, mUserId)
+                MyOrdersListAdapter(requireActivity(), ordersList, this)
 
 
             val deleteSwipeHandler = object : SwipeToDeleteCallback(requireContext()) {

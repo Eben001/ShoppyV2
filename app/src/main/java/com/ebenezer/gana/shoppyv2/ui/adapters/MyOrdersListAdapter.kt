@@ -18,52 +18,54 @@ import com.ebenezer.gana.shoppyv2.utils.GlideLoader
 class MyOrdersListAdapter(
     private val context: Context,
     private val ordersList: ArrayList<Order>,
-    private val fragment: OrdersFragment,
-    private val userId:String
+    private val fragment: OrdersFragment
 
 ) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<MyOrdersListAdapter.ViewHolder>() {
 
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private lateinit var orders: Order
+        fun bind(orders: Order) {
+            this.orders = orders
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return MyViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.list_item_product,
-            parent, false)
-        )
-    }
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val model = ordersList[position]
-
-        if (holder is MyViewHolder){
             GlideLoader(context).loadProductPicture(
-                model.image,
-                holder.itemView.findViewById(R.id.iv_item_image)
+                orders.image,
+                itemView.findViewById(R.id.iv_item_image)
             )
 
-            holder.itemView.findViewById<TextView>(R.id.tv_item_name).text = model.title
-            holder.itemView.findViewById<TextView>(R.id.tv_item_price).text  = "₦${model.total_amount}"
-            holder.itemView.findViewById<ImageButton>(R.id.ib_delete_product).visibility = View.VISIBLE
+            itemView.findViewById<TextView>(R.id.tv_item_name).text = orders.title
+            itemView.findViewById<TextView>(R.id.tv_item_price).text = "₦${orders.total_amount}"
+            itemView.findViewById<ImageButton>(R.id.ib_delete_product).visibility = View.VISIBLE
 
-
-            holder.itemView.findViewById<ImageButton>(R.id.ib_delete_product).setOnClickListener {
-                fragment.deleteAllOrders(model.id)
+            itemView.findViewById<ImageButton>(R.id.ib_delete_product).setOnClickListener {
+                fragment.deleteAllOrders(orders.id)
             }
 
 
-            holder.itemView.setOnClickListener {
+            itemView.setOnClickListener {
                 val intent = Intent(context, MyOrderDetailsActivity::class.java)
-                intent.putExtra(Constants.EXTRA_MY_ORDER_DETAILS, model)
+                intent.putExtra(Constants.EXTRA_MY_ORDER_DETAILS, orders)
                 context.startActivity(intent)
             }
 
         }
-    }
 
-    override fun getItemCount(): Int {
-        return ordersList.size
 
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.list_item_product,
+                parent, false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(ordersList[position])
+    }
+
+    override fun getItemCount() = ordersList.size
 }
