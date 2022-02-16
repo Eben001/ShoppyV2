@@ -48,9 +48,9 @@ class DashboardListAdapter(
                 ) // the id of the user who uploaded the products
                 context.startActivity(intent)
 
-                animateView(itemView)
-
             }
+
+            animateView(itemView)
 
 
         }
