@@ -9,6 +9,8 @@ import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ebenezer.gana.shoppyv2.R
+import com.ebenezer.gana.shoppyv2.databinding.ItemDashboardLayoutBinding
+import com.ebenezer.gana.shoppyv2.databinding.ListItemAddressBinding
 import com.ebenezer.gana.shoppyv2.models.Products
 import com.ebenezer.gana.shoppyv2.ui.activities.ProductDetailsActivity
 import com.ebenezer.gana.shoppyv2.utils.Constants
@@ -19,8 +21,8 @@ class DashboardListAdapter(
     private var allProducts: ArrayList<Products>
 ) : RecyclerView.Adapter<DashboardListAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(val binding: ItemDashboardLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         private lateinit var products: Products
 
         fun bind(products: Products) {
@@ -29,13 +31,13 @@ class DashboardListAdapter(
 
             GlideLoader(context).loadProductPicture(
                 products.image,
-                itemView.findViewById(R.id.iv_dashboard_item_image)
+                binding.ivDashboardItemImage
             )
 
-            itemView.findViewById<TextView>(R.id.tv_dashboard_item_title).text = products.title
-            itemView.findViewById<TextView>(R.id.tv_dashboard_item_price).text =
+            binding.tvDashboardItemTitle.text = products.title
+            binding.tvDashboardItemPrice.text =
                 "₦${products.price}"
-            itemView.findViewById<TextView>(R.id.tv_dashboard_item_description).text =
+            binding.tvDashboardItemDescription.text =
                 products.description
 
             itemView.setOnClickListener {
@@ -71,13 +73,11 @@ class DashboardListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.item_dashboard_layout,
-                parent,
-                false
-            )
+        val binding = ItemDashboardLayoutBinding.inflate(
+            LayoutInflater.from(context),
+            parent, false
         )
+        return ViewHolder(binding)
     }
 
     override fun getItemCount() = allProducts.size
