@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ebenezer.gana.shoppyv2.R
+import com.ebenezer.gana.shoppyv2.databinding.ListItemProductBinding
 import com.ebenezer.gana.shoppyv2.models.Order
 import com.ebenezer.gana.shoppyv2.ui.activities.MyOrderDetailsActivity
 import com.ebenezer.gana.shoppyv2.ui.fragments.OrdersFragment
@@ -24,21 +25,21 @@ class MyOrdersListAdapter(
     RecyclerView.Adapter<MyOrdersListAdapter.ViewHolder>() {
 
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(val binding:ListItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
         private lateinit var orders: Order
         fun bind(orders: Order) {
             this.orders = orders
 
             GlideLoader(context).loadProductPicture(
                 orders.image,
-                itemView.findViewById(R.id.iv_item_image)
+                binding.ivItemImage
             )
 
-            itemView.findViewById<TextView>(R.id.tv_item_name).text = orders.title
-            itemView.findViewById<TextView>(R.id.tv_item_price).text = "₦${orders.total_amount}"
-            itemView.findViewById<ImageButton>(R.id.ib_delete_product).visibility = View.VISIBLE
+            binding.tvItemName.text = orders.title
+            binding.tvItemPrice.text = "₦${orders.total_amount}"
+            binding.ibDeleteProduct.visibility = View.VISIBLE
 
-            itemView.findViewById<ImageButton>(R.id.ib_delete_product).setOnClickListener {
+            binding.ibDeleteProduct.setOnClickListener {
                 fragment.deleteAllOrders(orders.id)
             }
 
@@ -55,12 +56,9 @@ class MyOrdersListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.list_item_product,
-                parent, false
-            )
-        )
+        val binding = ListItemProductBinding.inflate(LayoutInflater.from(context),
+        parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
