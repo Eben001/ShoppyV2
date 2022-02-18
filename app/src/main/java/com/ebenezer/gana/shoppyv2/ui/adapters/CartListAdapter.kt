@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.ebenezer.gana.shoppyv2.R
+import com.ebenezer.gana.shoppyv2.databinding.ListItemCartBinding
 import com.ebenezer.gana.shoppyv2.firestore.FirestoreClass
 import com.ebenezer.gana.shoppyv2.models.CartItem
 import com.ebenezer.gana.shoppyv2.ui.activities.CartListActivity
@@ -23,13 +24,12 @@ class CartListAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.list_item_cart,
-                parent,
-                false
-            )
-        )
+
+        val binding =
+            ListItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return ViewHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -42,8 +42,9 @@ class CartListAdapter(
         return cartListItems.size
     }
 
-    inner class ViewHolder(itemView: View) : View.OnClickListener,
-        RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(val binding: ListItemCartBinding) : View.OnClickListener,
+
+        RecyclerView.ViewHolder(binding.root) {
         private lateinit var cartItem: CartItem
 
         fun bind(cartItem: CartItem) {
@@ -51,31 +52,38 @@ class CartListAdapter(
 
             GlideLoader(context).loadProductPicture(
                 cartItem.image,
-                itemView.findViewById(R.id.iv_cart_item_image)
+                binding.ivCartItemImage
             )
-            itemView.findViewById<TextView>(R.id.tv_cart_item_title).text = cartItem.title
-            itemView.findViewById<TextView>(R.id.tv_cart_item_price).text = "₦${cartItem.price}"
-            itemView.findViewById<TextView>(R.id.tv_cart_quantity).text = cartItem.cart_quantity
+
+
+            binding.tvCartItemTitle.text = cartItem.title
+            binding.tvCartItemPrice.text = "₦${cartItem.price}"
+            binding.tvCartQuantity.text = cartItem.cart_quantity
+
+
+            binding.ibDeleteCartItem.setOnClickListener(this)
+            binding.ibAddCartItem.setOnClickListener(this)
+            binding.ibRemoveCartItem.setOnClickListener(this)
 
             if (cartItem.cart_quantity == "0") {
-                itemView.findViewById<ImageButton>(R.id.ib_remove_cart_item).visibility =
+                binding.ibRemoveCartItem.visibility =
                     View.GONE
-                itemView.findViewById<ImageButton>(R.id.ib_add_cart_item).visibility =
+                binding.ibAddCartItem.visibility =
                     View.GONE
 
 
                 if (updateCartItems) {
-                    itemView.findViewById<ImageButton>(R.id.ib_delete_cart_item)
+                    binding.ibDeleteCartItem
                         .visibility = View.VISIBLE
                 } else {
-                    itemView.findViewById<ImageButton>(R.id.ib_delete_cart_item)
+                    binding.ibDeleteCartItem
                         .visibility = View.GONE
                 }
 
-                itemView.findViewById<TextView>(R.id.tv_cart_quantity).text =
+                binding.tvCartQuantity.text =
                     context.resources.getString(R.string.lb_out_of_stock)
 
-                itemView.findViewById<TextView>(R.id.tv_cart_quantity).setTextColor(
+                binding.tvCartQuantity.setTextColor(
                     ContextCompat.getColor(
                         context, R.color.colorSnackBarError
                     )
@@ -84,24 +92,24 @@ class CartListAdapter(
             } else {
 
                 if (updateCartItems) {
-                    itemView.findViewById<ImageButton>(R.id.ib_remove_cart_item).visibility =
+                    binding.ibRemoveCartItem.visibility =
                         View.VISIBLE
-                    itemView.findViewById<ImageButton>(R.id.ib_add_cart_item).visibility =
+                    binding.ibAddCartItem.visibility =
                         View.VISIBLE
-                    itemView.findViewById<ImageButton>(R.id.ib_delete_cart_item)
+                    binding.ibDeleteCartItem
                         .visibility = View.VISIBLE
 
                 } else {
-                    itemView.findViewById<ImageButton>(R.id.ib_remove_cart_item).visibility =
+                    binding.ibRemoveCartItem.visibility =
                         View.GONE
-                    itemView.findViewById<ImageButton>(R.id.ib_add_cart_item).visibility =
+                    binding.ibAddCartItem.visibility =
                         View.GONE
-                    itemView.findViewById<ImageButton>(R.id.ib_delete_cart_item)
+                    binding.ibDeleteCartItem
                         .visibility = View.GONE
 
                 }
 
-                itemView.findViewById<TextView>(R.id.tv_cart_quantity).setTextColor(
+                binding.tvCartQuantity.setTextColor(
                     ContextCompat.getColor(
                         context, R.color.colorSecondaryText
                     )
@@ -110,6 +118,7 @@ class CartListAdapter(
             }
 
         }
+
         override fun onClick(v: View?) {
             if (v != null) {
                 when (v.id) {
