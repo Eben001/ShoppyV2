@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ebenezer.gana.shoppyv2.R
+import com.ebenezer.gana.shoppyv2.databinding.ListItemAddressBinding
 import com.ebenezer.gana.shoppyv2.models.Address
 import com.ebenezer.gana.shoppyv2.ui.activities.AddEditAddressActivity
 import com.ebenezer.gana.shoppyv2.ui.activities.CheckoutActivity
@@ -22,16 +23,16 @@ class AddressListAdapter(
 ) : RecyclerView.Adapter<AddressListAdapter.ViewHolder>() {
 
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(val binding:ListItemAddressBinding) : RecyclerView.ViewHolder(binding.root) {
         private lateinit var address: Address
 
         fun bind(address: Address) {
             this.address = address
-            itemView.findViewById<TextView>(R.id.tv_address_full_name).text = address.name
-            itemView.findViewById<TextView>(R.id.tv_address_type).text = address.type
-            itemView.findViewById<TextView>(R.id.tv_address_details).text =
+            binding.tvAddressFullName.text = address.name
+            binding.tvAddressType.text = address.type
+            binding.tvAddressDetails.text =
                 "${address.address}, ${address.zipCode}"
-            itemView.findViewById<TextView>(R.id.tv_address_mobile_number).text =
+            binding.tvAddressMobileNumber.text =
                 address.mobileNumber
 
             if (selectAddress) {
@@ -48,12 +49,10 @@ class AddressListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        return ViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.list_item_address,
-                parent, false
-            )
-        )
+        val binding = ListItemAddressBinding.inflate(LayoutInflater.from(context), parent, false)
+
+        return ViewHolder(binding)
+
     }
 
     fun notifyEditItem(activity: Activity, position: Int) {
